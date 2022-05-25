@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/bound")
 @Data@NoArgsConstructor
@@ -23,8 +25,8 @@ public class FizzBuzzController {
     }
 
     @GetMapping("/{input}")
-    public String  getBound(@PathVariable int input)
+    public List<String> getBound(@PathVariable int input)
     {
-        return FBService.execute(input);
+       return FBService.execute(input);
     }
 }
